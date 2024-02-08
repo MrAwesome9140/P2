@@ -1,9 +1,10 @@
 import React from "react";
+import logo from "../images/restaurant-logo.png";
 
 const MenuHeader = () => {
     return (
         <div class="row title">
-            <img src={'/images/restaurant-logo.png'} alt="Image of the subway logo"/>
+            <img src={logo} alt="Image of the subway logo"/>
         </div>
     );
 }
