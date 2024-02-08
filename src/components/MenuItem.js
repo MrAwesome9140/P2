@@ -1,44 +1,5 @@
 import React from 'react';
 
-// Import the images
-import gyoza from "../images/gyoza.png";
-import ramen from "../images/ramen.png";
-import sushi from "../images/sushi.png";
-import katsu_curry from "../images/katsu-curry.png";
-import matcha_cake from "../images/matcha-cake.png";
-import mochi from "../images/mochi.png";
-import okonomiyaki from "../images/okonomiyaki.png";
-import sashimi from "../images/sashimi.png";
-import takoyaki from "../images/takoyaki.png";
-import yakitori from "../images/yakitori.png";
-
-function getImageName(title) {
-    switch(title) {
-        case "Gyoza":
-            return gyoza;
-        case "Ramen":
-            return ramen;
-        case "Sushi":
-            return sushi;
-        case "Katsu Curry":
-            return katsu_curry;
-        case "Matcha Cake":
-            return matcha_cake;
-        case "Mochi":
-            return mochi;
-        case "Okonomiyaki":
-            return okonomiyaki;
-        case "Sashimi":
-            return sashimi;
-        case "Takoyaki":
-            return takoyaki;
-        case "Yakitori":
-            return yakitori;
-        default:
-            return "";
-    }
-}
-
 
 // This is a functional component that represents a single menu item. It currently takes in the title and displays it in an h2 element.
 // Modify the component to take in all the other properties of a menu item you need and display them in the component.
@@ -46,10 +7,11 @@ function getImageName(title) {
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({title, description, imageName, price}) => {
     var fullAltText = "Image of the " + title + " dish.";
+    var fullImageName = "./images/" + imageName;
     return (
         <div class="row menu-item">
             <div class="col-4">
-                <img src={getImageName(title)} alt={fullAltText} class="menu-item-img"/>
+                <img src={fullImageName} alt={fullAltText} class="menu-item-img"/>
             </div>
             <div class="col-8 text-box">
                 <div class="row row-flex item-title">{title}</div>
